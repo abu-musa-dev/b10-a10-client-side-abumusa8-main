@@ -1,0 +1,175 @@
+:root {
+  --bg-color-light: #ffffff;
+  --text-color-light: #000000;
+  --bg-color-dark: #333333;
+  --text-color-dark: #ffffff;
+  --home-bg-color-light: #ffffff;
+  --home-text-color-light: #000000;
+  --home-bg-color-dark: #000000;
+  --home-text-color-dark: #ffffff;
+  --link-color-light: #1e3a8a;
+  --link-color-dark: #93c5fd;
+  --button-bg-light: #1e3a8a;
+  --button-bg-dark: #3b82f6;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --bg-color: var(--bg-color-light);
+  --text-color: var(--text-color-light);
+  --home-bg-color: var(--home-bg-color-light);
+  --home-text-color: var(--home-text-color-light);
+  --button-bg: var(--button-bg-light);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg-color: var(--bg-color-dark);
+  --text-color: var(--text-color-dark);
+  --home-bg-color: var(--home-bg-color-dark);
+  --home-text-color: var(--home-text-color-dark);
+  --button-bg: var(--button-bg-dark);
+}
+
+/* Body Styles */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Home Section */
+.home {
+  background-color: var(--home-bg-color);
+  color: var(--home-text-color);
+}
+
+/* About Section */
+.about-section {
+  background-color: #f3f4f6; /* Light background */
+  color: #4b5563; /* Dark text color */
+}
+
+[data-theme="dark"] .about-section {
+  background-color: #1f2937; /* Dark background */
+  color: #e5e7eb; /* Light text color */
+}
+
+.about-section a {
+  color: var(--link-color-light);
+}
+
+[data-theme="dark"] .about-section a {
+  color: var(--link-color-dark);
+}
+
+/* Donation Stats */
+.donation-stat {
+  background-color: #f3f4f6; /* Light background */
+  color: #4b5563; /* Dark text color */
+}
+
+[data-theme="dark"] .donation-stat {
+  background-color: #1f2937; /* Dark background */
+  color: #e5e7eb; /* Light text color */
+}
+
+/* Story Card */
+.story-card {
+  background-color: #f3f4f6; /* Light background */
+  color: #4b5563; /* Dark text color */
+}
+
+[data-theme="dark"] .story-card {
+  background-color: #1f2937; /* Dark background */
+  color: #e5e7eb; /* Light text color */
+}
+
+/* Success Stories Section */
+.successstories-section {
+  background-color: var(--home-bg-color-light); /* Light background */
+  color: var(--home-text-color-light); /* Light text color */
+}
+
+/* Dark Mode Success Stories Section */
+[data-theme="dark"] .successstories-section {
+  background-color: var(--home-bg-color-dark); /* Dark background */
+  color: var(--home-text-color-dark); /* Dark text color */
+}
+
+/* Button Styles */
+button {
+  background-color: var(--button-bg);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2563eb; /* Slightly darker on hover */
+}
+
+[data-theme="dark"] button {
+  background-color: var(--button-bg-dark);
+}
+
+[data-theme="light"] button {
+  background-color: var(--button-bg-light);
+}
+
+/* Apply dark mode styles */
+html[data-theme='dark'] {
+  background-color: #1a202c;
+  color: #f7fafc;
+}
+
+
+/* Define the typing animation */
+/* Define the typing animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Add the animation to the paragraph */
+.story-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  border-right: 3px solid;
+  animation: typing 5s steps(60) 1s forwards, blink-caret 0.75s step-end infinite;
+}
+
+/* Blink caret effect */
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.story-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  border-right: 3px solid;
+  animation: typing 5s steps(var(--text-length)) 1s forwards, blink-caret 0.75s step-end infinite;
+}
